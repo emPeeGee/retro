@@ -323,10 +323,17 @@
     </div>
   </div>
 </main>
-<app-button label="Do It!" variant="primary"></app-button>
-<app-button label="Outlined" variant="outline"></app-button>
-<app-button label="Hover Style" variant="hover"></app-button>
-<app-button label="Disabled" [disabled]="true"></app-button>
+
+<div class="flex gap-2">
+<app-button variant="default">Do it!</app-button>
+<app-button variant="default" size="sm">Do it!</app-button>
+<app-button variant="default" size="lg">Do it!</app-button>
+<app-button variant="neutral">Neutral</app-button>
+<app-button variant="reverse">Neutral</app-button>
+<app-button [disabled]="true">Disabled</app-button>
+<app-button variant="noShadow">No shadow</app-button>
+
+</div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
