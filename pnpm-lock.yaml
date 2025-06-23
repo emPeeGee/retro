@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@angular/cdk':
+        specifier: ^20.0.3
+        version: 20.0.3(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/common':
         specifier: ^20.0.0
         version: 20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2)
@@ -26,6 +29,12 @@ importers:
       '@angular/router':
         specifier: ^20.0.0
         version: 20.0.3(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(@angular/platform-browser@20.0.3(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@internationalized/date':
+        specifier: ^3.8.2
+        version: 3.8.2
+      '@radix-ng/primitives':
+        specifier: ^0.39.5
+        version: 0.39.5(@angular/cdk@20.0.3(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))
       '@tailwindcss/postcss':
         specifier: ^4.1.10
         version: 4.1.10
@@ -148,6 +157,13 @@ packages:
         optional: true
       vitest:
         optional: true
+
+  '@angular/cdk@20.0.3':
+    resolution: {integrity: sha512-70KG8GpK4aV9j5hUkpDZJQ6oMgCuaCRY6JX1axPxkNtQaiK6PAmTfQLiGqF2cYhbQneeq3uGvTorAjRfvp8NPQ==}
+    peerDependencies:
+      '@angular/common': ^20.0.0 || ^21.0.0
+      '@angular/core': ^20.0.0 || ^21.0.0
+      rxjs: ^6.5.3 || ^7.4.0
 
   '@angular/cli@20.0.2':
     resolution: {integrity: sha512-LzBONPETA1uCZuylgZRYe+vImf8i+rRrwAgOBHWbW2wxut9ZQ8ZFwQgNkjvDhE7DLmsFV+GskfAs5+Td/5LZwA==}
@@ -581,6 +597,9 @@ packages:
       '@types/node':
         optional: true
 
+  '@internationalized/date@3.8.2':
+    resolution: {integrity: sha512-/wENk7CbvLbkUvX1tu0mwq49CVkkWpkXubGel6birjRPyo6uQ4nQpnq5xZu823zRCwwn82zgHrvgF1vZyvmVgA==}
+
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
@@ -905,6 +924,12 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
+  '@radix-ng/primitives@0.39.5':
+    resolution: {integrity: sha512-rYnjpbVRZhwNCEo7HzdTO95YrDBEMzuZn69u9wgIDO81nqZ467G7ydpH4zBpCjihEHqMuIRnzq/YeVfzuZfzyw==}
+    peerDependencies:
+      '@angular/cdk': ^19.2.7
+      '@angular/core': ^19.2.4
+
   '@rollup/rollup-android-arm-eabi@4.40.2':
     resolution: {integrity: sha512-JkdNEq+DFxZfUwxvB58tHMHBHVgX23ew41g1OQinthJ+ryhdRk67O31S7sYw8u2lTjHUPFxwar07BBt1KHp/hg==}
     cpu: [arm]
@@ -1035,6 +1060,9 @@ packages:
 
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
+
+  '@swc/helpers@0.5.17':
+    resolution: {integrity: sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==}
 
   '@tailwindcss/node@4.1.10':
     resolution: {integrity: sha512-2ACf1znY5fpRBwRhMgj9ZXvb2XZW8qs+oTfotJ2C5xR0/WNL7UHZ7zXl6s+rUqedL1mNi+0O+WQr5awGowS3PQ==}
@@ -2834,6 +2862,14 @@ snapshots:
       - tsx
       - yaml
 
+  '@angular/cdk@20.0.3(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2)':
+    dependencies:
+      '@angular/common': 20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/core': 20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)
+      parse5: 7.3.0
+      rxjs: 7.8.2
+      tslib: 2.8.1
+
   '@angular/cli@20.0.2(@types/node@24.0.1)(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/architect': 0.2000.2(chokidar@4.0.3)
@@ -3251,6 +3287,10 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.0.1
 
+  '@internationalized/date@3.8.2':
+    dependencies:
+      '@swc/helpers': 0.5.17
+
   '@isaacs/cliui@8.0.2':
     dependencies:
       string-width: 5.1.2
@@ -3518,6 +3558,12 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
+  '@radix-ng/primitives@0.39.5(@angular/cdk@20.0.3(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))':
+    dependencies:
+      '@angular/cdk': 20.0.3(@angular/common@20.0.3(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/core': 20.0.3(@angular/compiler@20.0.3)(rxjs@7.8.2)
+      tslib: 2.8.1
+
   '@rollup/rollup-android-arm-eabi@4.40.2':
     optional: true
 
@@ -3619,6 +3665,10 @@ snapshots:
       '@sigstore/protobuf-specs': 0.4.3
 
   '@socket.io/component-emitter@3.1.2': {}
+
+  '@swc/helpers@0.5.17':
+    dependencies:
+      tslib: 2.8.1
 
   '@tailwindcss/node@4.1.10':
     dependencies:
