@@ -1,0 +1,39 @@
+<div
+  class="radix-themes light light-theme radix-themes-default-fonts rt-Flex rt-r-ai-start rt-r-jc-center rt-r-position-relative"
+  data-accent-color="indigo"
+  data-radius="medium"
+  data-scaling="100%"
+>
+  <button
+    class="Button violet"
+    [rdxDialogConfig]="config"
+    [rdxDialogTrigger]="sheetTpl"
+  >
+    Open Sheet
+  </button>
+
+  <ng-template #sheetTpl>
+    <div class="DialogContent" 
+    class="h-full bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 border-2 border-border transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500"
+    
+    rdxDialogContent>
+      <h2 class="text-foreground font-heading" rdxDialogTitle>Edit profile</h2>
+      <p class="DialogDescription" rdxDialogDescription>
+        Make changes to your profile here. Click save when you're done.
+      </p>
+      <fieldset class="Fieldset">
+        <label class="Label" htmlFor="name">Name</label>
+        <input class="Input" id="name" defaultValue="Pedro Duarte" />
+      </fieldset>
+      <fieldset class="Fieldset">
+        <label class="Label" htmlFor="username">Username</label>
+        <input class="Input" id="username" defaultValue="@peduarte" />
+      </fieldset>
+      <div style="display:flex; margin-top: 25px; justify-content: flex-end;">
+        <button class="Button green" rdxDialogClose>Save changes</button>
+      </div>
+      <button class="IconButton" rdxDialogClose aria-label="Close">X</button>
+    </div>
+  </ng-template>
+
+</div>
