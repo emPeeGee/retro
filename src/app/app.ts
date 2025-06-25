@@ -5,10 +5,13 @@ import { Switch } from "./shared/components/switch/switch";
 import { InputComponent } from "./shared/components/input/input";
 import { Label } from "./shared/components/label/label";
 import { Sheet } from "./shared/components/sheet/sheet";
+import { Tabs } from "./shared/components/tabs/tabs";
+import { CardComponent, CardHeaderComponent, CardTitleComponent, CardDescriptionComponent, CardActionComponent, CardContentComponent, CardFooterComponent } from "./shared/components/card/card";
+import { SidebarComponent } from "./shared/components/sidebar/sidebar";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Button, Switch, InputComponent, Label, Sheet],
+  imports: [RouterOutlet, Button, Switch, InputComponent, Label, Sheet, Tabs, CardComponent, CardHeaderComponent, CardTitleComponent, CardDescriptionComponent, CardActionComponent, CardContentComponent, CardFooterComponent, SidebarComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

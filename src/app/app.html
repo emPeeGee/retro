@@ -341,6 +341,42 @@
   <app-input type="email" inputId="email" placeholder="Email"></app-input>
 </div>
 
+<app-tabs></app-tabs>
+
+<div class="flex flex-col items-center gap-4">
+  <app-card extraClass="w-3xl">
+    <app-card-header>
+      <app-card-title>My Title</app-card-title>
+      <app-card-description>Some description</app-card-description>
+      <app-card-action>
+        <app-button variant="default" size="sm">Action</app-button>
+      </app-card-action>
+    </app-card-header>
+
+    <app-card-content>
+      <p>Main content here.</p>
+    </app-card-content>
+
+    <app-card-footer>
+      <p>Footer content</p>
+    </app-card-footer>
+  </app-card>
+
+<app-card extraClass="w-3xl">
+  <app-card-header>
+    <app-card-title>My Title</app-card-title>
+    <app-card-description>Some description</app-card-description>
+  </app-card-header>
+
+  <app-card-content>
+    <p>Main content here.</p>
+  </app-card-content>
+
+  <app-card-footer>
+    <p>Footer content</p>
+  </app-card-footer>
+</app-card>
+</div>
 <app-sheet></app-sheet>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -351,5 +387,16 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+
+<div>
+
+  <app-sidebar>
+      <header class="w-xl flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
+          <div class="flex items-center gap-2 px-4">
+            </div>
+            </header>
+
+  </app-sidebar>
+</div>
 
 <router-outlet />
