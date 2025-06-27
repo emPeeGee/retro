@@ -6,7 +6,8 @@ const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
 
 @Injectable({ providedIn: 'root' })
 export class SidebarService {
-  private _open = signal<boolean>(this.getInitialSidebarState());
+  private _open = signal<boolean>(false);
+  // private _open = signal<boolean>(this.getInitialSidebarState());
   private _openMobile = signal<boolean>(false);
 
   readonly isMobile = signal<boolean>(false); // replace with matchMedia logic if needed
@@ -17,6 +18,7 @@ export class SidebarService {
   constructor() {
     // Keyboard shortcut effect
     effect(() => {
+      console.log('state', this.state());
       const handler = (event: KeyboardEvent) => {
         if ((event.metaKey || event.ctrlKey) && event.key === SIDEBAR_KEYBOARD_SHORTCUT) {
           event.preventDefault();
@@ -25,6 +27,7 @@ export class SidebarService {
       };
       window.addEventListener('keydown', handler);
       return () => window.removeEventListener('keydown', handler);
+
     });
   }
 
@@ -57,6 +60,6 @@ export class SidebarService {
     const cookie = document.cookie
       .split('; ')
       .find((row) => row.startsWith(SIDEBAR_COOKIE_NAME + '='));
-    return cookie ? cookie.split('=')[1] === 'true' : true;
+    return cookie ? cookie.split('=')[1] === 'true' : false;
   }
 }
