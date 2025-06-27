@@ -7,11 +7,11 @@ import { Label } from "./shared/components/label/label";
 import { Sheet } from "./shared/components/sheet/sheet";
 import { Tabs } from "./shared/components/tabs/tabs";
 import { CardComponent, CardHeaderComponent, CardTitleComponent, CardDescriptionComponent, CardActionComponent, CardContentComponent, CardFooterComponent } from "./shared/components/card/card";
-import { SidebarComponent } from "./shared/components/sidebar/sidebar";
+import { SidebarComponent,  SidebarTriggerComponent, SidebarRailComponent } from "./shared/components/sidebar/sidebar";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Button, Switch, InputComponent, Label, Sheet, Tabs, CardComponent, CardHeaderComponent, CardTitleComponent, CardDescriptionComponent, CardActionComponent, CardContentComponent, CardFooterComponent, SidebarComponent],
+  imports: [RouterOutlet, Button, Switch, InputComponent, Label, Sheet, Tabs, CardComponent, CardHeaderComponent, CardTitleComponent, CardDescriptionComponent, CardActionComponent, CardContentComponent, CardFooterComponent, SidebarComponent,  SidebarTriggerComponent, SidebarRailComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

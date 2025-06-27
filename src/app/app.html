@@ -65,6 +65,7 @@
     width: 100%;
     min-height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
@@ -176,6 +177,33 @@
     }
   }
 </style>
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<div
+class="group/sidebar-wrapper flex min-h-svh w-full"
+>
+
+
+  <app-sidebar>
+      <header class="w-xl flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
+          <div class="flex items-center gap-2 px-4">
+            fdsfdsfsd
+            </div>
+            </header>
+
+            <app-sidebar-rail></app-sidebar-rail>
+  </app-sidebar>
+
+
 
 <main class="main">
   <div class="content">
@@ -322,7 +350,10 @@
       </div>
     </div>
   </div>
-</main>
+
+
+
+
 
 <div class="flex gap-2">
 <app-button variant="default">Do it!</app-button>
@@ -350,6 +381,7 @@
       <app-card-description>Some description</app-card-description>
       <app-card-action>
         <app-button variant="default" size="sm">Action</app-button>
+    <app-sidebar-trigger ></app-sidebar-trigger>
       </app-card-action>
     </app-card-header>
 
@@ -379,24 +411,7 @@
 </div>
 <app-sheet></app-sheet>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-<div>
-
-  <app-sidebar>
-      <header class="w-xl flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-          <div class="flex items-center gap-2 px-4">
-            </div>
-            </header>
-
-  </app-sidebar>
+<router-outlet />
+</main>
 </div>
 
-<router-outlet />

@@ -74,7 +74,7 @@ export class SidebarComponent {
   sidebar = inject(SidebarService);
 
   readonly side = input<'left' | 'right'>('left');
-  readonly variant = input<'sidebar' | 'floating' | 'inset'>('inset');
+  readonly variant = input<'sidebar' | 'floating'>('floating');
   readonly collapsible = input<'offcanvas' | 'icon' | 'none'>('icon');
   readonly extraClass = input<string>('');
 
@@ -85,7 +85,7 @@ export class SidebarComponent {
     const base = 'relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear';
     const side = this.side() === 'right' ? 'group-data-[side=right]:rotate-180' : '';
     const iconWidth =
-      this.variant() === 'floating' || this.variant() === 'inset'
+      this.variant() === 'floating' 
         ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]'
         : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon]';
     return `${base} group-data-[collapsible=offcanvas]:w-0 ${side} ${iconWidth}`;
@@ -98,7 +98,7 @@ export class SidebarComponent {
       ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
       : 'right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]';
     const padding =
-      this.variant() === 'floating' || this.variant() === 'inset'
+      this.variant() === 'floating' 
         ? 'p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]'
         : 'group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r-2 border-r-border group-data-[side=right]:border-l-2 border-l-border';
     return `${base} ${side} ${padding} ${this.extraClass()}`;
@@ -138,34 +138,6 @@ export class SidebarRailComponent {
     group-data-[collapsible=offcanvas]:after:left-full
     [[data-side=left][data-collapsible=offcanvas]_&]:-right-2 
     [[data-side=right][data-collapsible=offcanvas]_&]:-left-2
-    ${this.extraClass()}
-    `
-  );
-}
-
-@Component({
-  selector: 'app-sidebar-inset',
-  standalone: true,
-  imports: [NgClass],
-  template: `
-    <main
-      data-slot="sidebar-inset"
-      [ngClass]="computedClass()"
-    >
-      <ng-content></ng-content>
-    </main>
-  `,
-})
-export class SidebarInsetComponent {
-  readonly extraClass = input<string>('');
-
-  readonly computedClass = computed(() =>
-    `bg-secondary-background relative flex w-full flex-1 flex-col
-    md:peer-data-[variant=inset]:m-2 
-    md:peer-data-[variant=inset]:ml-0 
-    md:peer-data-[variant=inset]:rounded-base 
-    md:peer-data-[variant=inset]:shadow-sm 
-    md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2
     ${this.extraClass()}
     `
   );

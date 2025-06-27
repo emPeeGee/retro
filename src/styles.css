@@ -12,6 +12,8 @@
   --ring: oklch(0% 0 0);
   --overlay: oklch(0% 0 0 / 0.8);
   --shadow: 4px 4px 0px 0px var(--border);
+  --sidebar-width: 16rem;
+  --sidebar-width-icon: 3rem;
 }
 
 .dark {
@@ -23,6 +25,8 @@
   --border: oklch(0% 0 0);
   --ring: oklch(100% 0 0);
   --shadow: 4px 4px 0px 0px var(--border);
+  --sidebar-width: 16rem;
+  --sidebar-width-icon: 3rem;
 }
 
 @theme inline {
@@ -48,6 +52,9 @@
   --shadow-shadow: var(--shadow);
   --font-weight-base: 500;
   --font-weight-heading: 700;
+
+  --sidebar-width: var(--sidebar-width);
+  --sidebar-width-icon: var(--sidebar-width-icon)
 }
   
 @layer base {
