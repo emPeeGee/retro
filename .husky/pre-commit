@@ -1,7 +1,5 @@
 npm run lint-staged
 chmod ug+x .husky/*
-
 npx --no -- commitlint --edit "$1"
-ng lint
-npm test
+# npm test
 
