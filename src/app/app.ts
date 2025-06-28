@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Button } from './shared/components/button/button';
-import { Switch } from './shared/components/switch/switch';
-import { InputComponent } from './shared/components/input/input';
-import { Label } from './shared/components/label/label';
-import { Sheet } from './shared/components/sheet/sheet';
-import { Tabs } from './shared/components/tabs/tabs';
 import {
-  CardActionComponent,
-  CardComponent,
-  CardContentComponent,
-  CardDescriptionComponent,
-  CardFooterComponent,
-  CardHeaderComponent,
-  CardTitleComponent,
-} from './shared/components/card/card';
-import { SidebarComponent, SidebarRailComponent, SidebarTriggerComponent } from './shared/components/sidebar/sidebar';
+  Button,
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  InputComponent,
+  Label,
+  Sheet,
+  SidebarComponent,
+  SidebarRailComponent,
+  SidebarTriggerComponent,
+  Switch,
+  Tabs,
+} from '@app/shared/components';
 
 @Component({
   selector: 'app-root',
@@ -27,13 +29,13 @@ import { SidebarComponent, SidebarRailComponent, SidebarTriggerComponent } from 
     Label,
     Sheet,
     Tabs,
-    CardComponent,
-    CardHeaderComponent,
-    CardTitleComponent,
-    CardDescriptionComponent,
-    CardActionComponent,
-    CardContentComponent,
-    CardFooterComponent,
+    Card,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+    CardAction,
+    CardContent,
+    CardFooter,
     SidebarComponent,
     SidebarTriggerComponent,
     SidebarRailComponent,

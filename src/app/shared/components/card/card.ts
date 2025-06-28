@@ -13,7 +13,7 @@ import { NgClass } from '@angular/common';
     </div>
   `,
 })
-export class CardComponent {
+export class Card {
   readonly extraClass = input<string>('');
 
   readonly computedClass = computed(
@@ -32,7 +32,7 @@ export class CardComponent {
     </div>
   `,
 })
-export class CardHeaderComponent {
+export class CardHeader {
   readonly extraClass = input<string>('');
 
   readonly computedClass = computed(
@@ -51,7 +51,7 @@ export class CardHeaderComponent {
     </div>
   `,
 })
-export class CardTitleComponent {
+export class CardTitle {
   readonly extraClass = input<string>('');
   readonly computedClass = computed(() => `font-heading leading-none ${this.extraClass()}`);
 }
@@ -66,7 +66,7 @@ export class CardTitleComponent {
     </div>
   `,
 })
-export class CardDescriptionComponent {
+export class CardDescription {
   readonly extraClass = input<string>('');
   readonly computedClass = computed(() => `text-sm font-base ${this.extraClass()}`);
 }
@@ -81,7 +81,7 @@ export class CardDescriptionComponent {
     </div>
   `,
 })
-export class CardActionComponent {
+export class CardAction {
   readonly extraClass = input<string>('');
   readonly computedClass = computed(
     () => `col-start-2 row-span-2 row-start-1 self-start justify-self-end ${this.extraClass()}`,
@@ -98,7 +98,7 @@ export class CardActionComponent {
     </div>
   `,
 })
-export class CardContentComponent {
+export class CardContent {
   readonly extraClass = input<string>('');
   readonly computedClass = computed(() => `px-6 ${this.extraClass()}`);
 }
@@ -113,7 +113,7 @@ export class CardContentComponent {
     </div>
   `,
 })
-export class CardFooterComponent {
+export class CardFooter {
   readonly extraClass = input<string>('');
   readonly computedClass = computed(() => `flex items-center px-6 [.border-t]:pt-6 ${this.extraClass()}`);
 }
