@@ -1,6 +1,5 @@
-import { Component, computed, Input, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RdxLabelDirective } from '@radix-ng/primitives/label';
-
 
 @Component({
   selector: 'app-label',

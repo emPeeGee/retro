@@ -1,17 +1,6 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-card',
-//   imports: [],
-//   templateUrl: './card.html',
-//   styleUrl: './card.css'
-// })
-// export class Card {
-
-// }
-
-// // File: src/app/shared/components/card/card.component.ts
-import { Component, Input, computed, input } from '@angular/core';
+/* eslint-disable max-len */
+// eslint-disable-next-line max-classes-per-file
+import { Component, computed, input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -19,19 +8,17 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [NgClass],
   template: `
-    <div
-      data-slot="card"
-      [ngClass]="computedClass()"
-    >
-      <ng-content></ng-content>
+    <div data-slot="card" [ngClass]="computedClass()">
+      <ng-content />
     </div>
   `,
 })
 export class CardComponent {
   readonly extraClass = input<string>('');
 
-  readonly computedClass = computed(() =>
-    `rounded-base flex flex-col shadow-shadow border-2 gap-6 py-6 border-border bg-background text-foreground font-base ${this.extraClass()}`
+  readonly computedClass = computed(
+    () =>
+      `rounded-base flex flex-col shadow-shadow border-2 gap-6 py-6 border-border bg-background text-foreground font-base ${this.extraClass()}`,
   );
 }
 
@@ -40,19 +27,17 @@ export class CardComponent {
   standalone: true,
   imports: [NgClass],
   template: `
-    <div
-      data-slot="card-header"
-      [ngClass]="computedClass()"
-    >
-      <ng-content></ng-content>
+    <div data-slot="card-header" [ngClass]="computedClass()">
+      <ng-content />
     </div>
   `,
 })
 export class CardHeaderComponent {
   readonly extraClass = input<string>('');
 
-  readonly computedClass = computed(() =>
-    `@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-[data-slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 ${this.extraClass()}`
+  readonly computedClass = computed(
+    () =>
+      `@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-[data-slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 ${this.extraClass()}`,
   );
 }
 
@@ -62,7 +47,7 @@ export class CardHeaderComponent {
   imports: [NgClass],
   template: `
     <div data-slot="card-title" [ngClass]="computedClass()">
-      <ng-content></ng-content>
+      <ng-content />
     </div>
   `,
 })
@@ -98,7 +83,9 @@ export class CardDescriptionComponent {
 })
 export class CardActionComponent {
   readonly extraClass = input<string>('');
-  readonly computedClass = computed(() => `col-start-2 row-span-2 row-start-1 self-start justify-self-end ${this.extraClass()}`);
+  readonly computedClass = computed(
+    () => `col-start-2 row-span-2 row-start-1 self-start justify-self-end ${this.extraClass()}`,
+  );
 }
 
 @Component({
