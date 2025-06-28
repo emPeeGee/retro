@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 type ButtonVariant = 'default' | 'noShadow' | 'neutral' | 'reverse';
 type ButtonSize = 'md' | 'sm' | 'lg' | 'icon';
@@ -8,25 +8,26 @@ type ButtonSize = 'md' | 'sm' | 'lg' | 'icon';
   templateUrl: './button.html',
 })
 export class Button {
-  @Input() variant: ButtonVariant = 'default';
-  @Input() size: ButtonSize = 'md';
-  @Input() disabled = false;
-  @Input() additionalClasses = '';
+  readonly variant = input<ButtonVariant>('default');
+  readonly size = input<ButtonSize>('md');
+  readonly disabled = input<boolean>(false);
+  readonly additionalClasses = input<string>('');
 
   get buttonClasses(): string {
-    const base = `inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm font-base ring-offset-white transition-all gap-2
+    const base = `inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm 
+    font-base ring-offset-white transition-all gap-2
     [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
     focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2
     disabled:pointer-events-none disabled:opacity-50`;
 
     const variants: Record<ButtonVariant, string> = {
-      default:
-        'text-main-foreground bg-main border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none',
+      default: `text-main-foreground bg-main border-2 border-border shadow-shadow hover:translate-x-boxShadowX
+         hover:translate-y-boxShadowY hover:shadow-none`,
       noShadow: 'text-main-foreground bg-main border-2 border-border',
-      neutral:
-        'bg-secondary-background text-foreground border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none',
-      reverse:
-        'text-main-foreground bg-main border-2 border-border hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY hover:shadow-shadow',
+      neutral: `bg-secondary-background text-foreground border-2 border-border shadow-shadow 
+        hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none`,
+      reverse: `text-main-foreground bg-main border-2 border-border hover:translate-x-reverseBoxShadowX 
+        hover:translate-y-reverseBoxShadowY hover:shadow-shadow`,
     };
 
     const sizes: Record<ButtonSize, string> = {
@@ -36,6 +37,6 @@ export class Button {
       icon: 'size-10',
     };
 
-    return [base, variants[this.variant], sizes[this.size], this.additionalClasses].join(' ');
+    return [base, variants[this.variant()], sizes[this.size()], this.additionalClasses()].join(' ');
   }
 }

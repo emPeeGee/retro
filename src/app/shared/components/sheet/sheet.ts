@@ -1,4 +1,4 @@
-import { Component, ContentChild, TemplateRef, ViewChild } from '@angular/core';
+import { Component, contentChild, ElementRef, viewChild } from '@angular/core';
 import { provideRdxDialog, RdxDialogConfig, RdxDialogModule } from '@radix-ng/primitives/dialog';
 
 @Component({
@@ -9,17 +9,14 @@ import { provideRdxDialog, RdxDialogConfig, RdxDialogModule } from '@radix-ng/pr
   providers: [provideRdxDialog()],
 })
 export class Sheet {
-  @ContentChild('sheetTpl', { static: true }) sheetTpl: any;
+  readonly sheetTpl = contentChild('sheetTpl', {});
 
-  @ViewChild('sheetTpl') myTemplateRef!: TemplateRef<any>;
+  readonly sheetTplRef = viewChild<ElementRef>('sheetTpl');
 
-  config: RdxDialogConfig<any> = {
+  config: RdxDialogConfig<unknown> = {
     backdropClass: 'cdk-overlay-dark-backdrop',
     mode: 'sheet-right',
     panelClasses: ['DialogSheet'],
-    // content will be set dynamically, so it's omitted here
-    // content: null,
-    content: this.myTemplateRef,
-    data: {},
+    content: this.sheetTplRef()?.nativeElement,
   };
 }

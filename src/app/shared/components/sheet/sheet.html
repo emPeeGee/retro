@@ -3,7 +3,9 @@
   data-accent-color="indigo"
   data-radius="medium"
   data-scaling="100%">
-  <button class="Button violet" [rdxDialogConfig]="config" [rdxDialogTrigger]="sheetTpl">Open Sheet</button>
+  <button class="Button violet" type="button" [rdxDialogConfig]="config" [rdxDialogTrigger]="sheetTpl">
+    Open Sheet
+  </button>
 
   <ng-template #sheetTpl>
     <div

@@ -62,7 +62,7 @@ export class CardTitleComponent {
   imports: [NgClass],
   template: `
     <div data-slot="card-description" [ngClass]="computedClass()">
-      <ng-content></ng-content>
+      <ng-content />
     </div>
   `,
 })
@@ -77,7 +77,7 @@ export class CardDescriptionComponent {
   imports: [NgClass],
   template: `
     <div data-slot="card-action" [ngClass]="computedClass()">
-      <ng-content></ng-content>
+      <ng-content />
     </div>
   `,
 })
@@ -94,7 +94,7 @@ export class CardActionComponent {
   imports: [NgClass],
   template: `
     <div data-slot="card-content" [ngClass]="computedClass()">
-      <ng-content></ng-content>
+      <ng-content />
     </div>
   `,
 })
@@ -109,7 +109,7 @@ export class CardContentComponent {
   imports: [NgClass],
   template: `
     <div data-slot="card-footer" [ngClass]="computedClass()">
-      <ng-content></ng-content>
+      <ng-content />
     </div>
   `,
 })

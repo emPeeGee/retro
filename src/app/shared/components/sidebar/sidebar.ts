@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import { Component, computed, EventEmitter, inject, input, Output } from '@angular/core';
+import { Component, computed, inject, input, output } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 import { SidebarService } from '../../../core/services/sidebar';
 import { Button } from '../button/button';
@@ -8,69 +8,62 @@ import { Button } from '../button/button';
   selector: 'app-sidebar',
   imports: [NgClass, CommonModule],
   template: `
-    <!-- Collapsible: none -->
-    <ng-container *ngIf="collapsible() === 'none'; else collapsibleBlock">
+    @if (collapsible() === 'none') {
       <div
         class="bg-secondary-background text-foreground flex h-full w-(--sidebar-width) flex-col"
         data-slot="sidebar"
         [ngClass]="extraClass()">
         <ng-content />
       </div>
-    </ng-container>
+    }
 
-    <!-- Collapsible on mobile/desktop -->
-    <ng-template #collapsibleBlock>
-      <ng-container *ngIf="sidebar.isMobile(); else desktopBlock">
-        <!-- Mobile sheet placeholder -->
-        <div
-          class="bg-secondary-background text-foreground w-(--sidebar-width) p-0"
-          data-mobile="true"
-          data-sidebar="sidebar"
-          data-slot="sidebar"
-          [ngStyle]="{ '--sidebar-width': sidebarWidthMobile }">
-          <div class="flex h-full w-full flex-col">
-            <ng-content></ng-content>
+    @if (sidebar.isMobile()) {
+      <!-- TODO: Mobile sheet placeholder -->
+      <div
+        class="bg-secondary-background text-foreground w-(--sidebar-width) p-0"
+        data-mobile="true"
+        data-sidebar="sidebar"
+        data-slot="sidebar"
+        [ngStyle]="{ '--sidebar-width': sidebarWidthMobile }">
+        <div class="flex h-full w-full flex-col">
+          <ng-content />
+        </div>
+      </div>
+    } @else {
+      <div
+        class="group peer hidden md:block"
+        data-slot="sidebar"
+        [attr.data-collapsible]="sidebar.state() === 'collapsed' ? collapsible() : ''"
+        [attr.data-side]="side()"
+        [attr.data-state]="sidebar.state()"
+        [attr.data-variant]="variant()">
+        <div data-slot="sidebar-gap" [ngClass]="gapClass()"></div>
+
+        <div class="w-(--sidebar-width)" data-slot="sidebar-container" [ngClass]="containerClass()">
+          <div
+            class="bg-secondary-background flex h-full w-full flex-col bg-sidebar 
+            group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border 
+            group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
+            data-sidebar="sidebar"
+            data-slot="sidebar-inner">
+            <h1>test</h1>
+            <ng-content />
           </div>
         </div>
-      </ng-container>
-
-      <ng-template #desktopBlock>
-        <div
-          class="group peer hidden md:block"
-          data-slot="sidebar"
-          [attr.data-collapsible]="sidebar.state() === 'collapsed' ? collapsible() : ''"
-          [attr.data-side]="side()"
-          [attr.data-state]="sidebar.state()"
-          [attr.data-variant]="variant()">
-          <!-- Sidebar gap -->
-          <div data-slot="sidebar-gap" [ngClass]="gapClass()"></div>
-
-          <!-- Sidebar container -->
-          <div class="w-(--sidebar-width)" data-slot="sidebar-container" [ngClass]="containerClass()">
-            <div
-              class="bg-secondary-background flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
-              data-sidebar="sidebar"
-              data-slot="sidebar-inner">
-              <h1>test</h1>
-              <ng-content />
-            </div>
-          </div>
-        </div>
-      </ng-template>
-    </ng-template>
+      </div>
+    }
   `,
 })
 export class SidebarComponent {
   sidebar = inject(SidebarService);
+  sidebarWidthMobile = '18rem';
 
   readonly side = input<'left' | 'right'>('left');
   readonly variant = input<'sidebar' | 'floating'>('floating');
   readonly collapsible = input<'offcanvas' | 'icon' | 'none'>('icon');
   readonly extraClass = input<string>('');
 
-  sidebarWidthMobile = '18rem';
-
-  gapClass = computed(() => {
+  readonly gapClass = computed(() => {
     const base = 'relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear';
     const side = this.side() === 'right' ? 'group-data-[side=right]:rotate-180' : '';
     const iconWidth =
@@ -80,9 +73,9 @@ export class SidebarComponent {
     return `${base} group-data-[collapsible=offcanvas]:w-0 ${side} ${iconWidth}`;
   });
 
-  containerClass = computed(() => {
-    const base =
-      'fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex';
+  readonly containerClass = computed(() => {
+    const base = `fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width]
+       duration-200 ease-linear md:flex`;
     const side =
       this.side() === 'left'
         ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
@@ -90,7 +83,8 @@ export class SidebarComponent {
     const padding =
       this.variant() === 'floating'
         ? 'p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]'
-        : 'group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r-2 border-r-border group-data-[side=right]:border-l-2 border-l-border';
+        : `group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r-2 
+          border-r-border group-data-[side=right]:border-l-2 border-l-border`;
     return `${base} ${side} ${padding} ${this.extraClass()}`;
   });
 }
@@ -106,6 +100,7 @@ export class SidebarComponent {
       data-slot="sidebar-rail"
       tabindex="-1"
       title="Toggle Sidebar"
+      type="button"
       [ngClass]="computedClass()"
       (click)="sidebar.toggleSidebar()"></button>
   `,
@@ -153,13 +148,11 @@ export class SidebarTriggerComponent {
   private readonly sidebar = inject(SidebarService);
 
   readonly extraClass = input<string>('');
-  @Output() readonly click = new EventEmitter<MouseEvent>();
-
+  readonly sidebarTrigger = output<MouseEvent>();
   readonly computedClass = computed(() => `size-7 ${this.extraClass()}`);
 
   handleClick(event: MouseEvent): void {
-    console.log('Sidebar trigger clicked');
-    this.click.emit(event);
+    this.sidebarTrigger.emit(event);
     this.sidebar.toggleSidebar();
   }
 }
