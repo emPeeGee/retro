@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,6 +14,22 @@
   --shadow: 4px 4px 0px 0px var(--border);
   --sidebar-width: 16rem;
   --sidebar-width-icon: 3rem;
+
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .dark {
@@ -54,15 +70,20 @@
   --font-weight-heading: 700;
 
   --sidebar-width: var(--sidebar-width);
-  --sidebar-width-icon: var(--sidebar-width-icon)
+  --sidebar-width-icon: var(--sidebar-width-icon);
 }
-  
+
 @layer base {
   body {
     @apply text-foreground font-base bg-background;
   }
 
-  h1, h2, h3, h4, h5, h6{
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
