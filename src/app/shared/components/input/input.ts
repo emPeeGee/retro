@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-input',
+  selector: 'rtr-input',
   imports: [],
   templateUrl: './input.html',
 })

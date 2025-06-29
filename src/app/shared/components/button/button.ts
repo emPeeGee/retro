@@ -4,7 +4,7 @@ type ButtonVariant = 'default' | 'noShadow' | 'neutral' | 'reverse';
 type ButtonSize = 'md' | 'sm' | 'lg' | 'icon';
 
 @Component({
-  selector: 'app-button',
+  selector: 'rtr-button',
   templateUrl: './button.html',
 })
 export class Button {

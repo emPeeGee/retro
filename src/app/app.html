@@ -1,69 +1,69 @@
 <div class="group/sidebar-wrapper flex min-h-svh w-full">
-  <app-sidebar>
+  <rtr-sidebar>
     <header
       class="w-xl flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
       <div class="flex items-center gap-2 px-4">fdsfdsfsd</div>
     </header>
 
-    <app-sidebar-rail />
-  </app-sidebar>
+    <rtr-sidebar-rail />
+  </rtr-sidebar>
 
   <main class="main w-full min-h-full flex flex-col justify-center items-center p-4 box-border relative">
     <div class="flex gap-2">
-      <app-button variant="default">Do it!</app-button>
-      <app-button size="sm" variant="default">Do it!</app-button>
-      <app-button size="lg" variant="default">Do it!</app-button>
-      <app-button variant="neutral">Neutral</app-button>
-      <app-button variant="reverse">Neutral</app-button>
-      <app-button [disabled]="true">Disabled</app-button>
-      <app-button variant="noShadow">No shadow</app-button>
+      <rtr-button variant="default">Do it!</rtr-button>
+      <rtr-button size="sm" variant="default">Do it!</rtr-button>
+      <rtr-button size="lg" variant="default">Do it!</rtr-button>
+      <rtr-button variant="neutral">Neutral</rtr-button>
+      <rtr-button variant="reverse">Neutral</rtr-button>
+      <rtr-button [disabled]="true">Disabled</rtr-button>
+      <rtr-button variant="noShadow">No shadow</rtr-button>
     </div>
 
-    <app-switch />
+    <rtr-switch />
 
     <div class="grid max-w-[200px] items-center gap-1.5">
-      <app-label htmlFor="email">Email</app-label>
-      <app-input inputId="email" placeholder="Email" type="email" />
+      <rtr-label htmlFor="email">Email</rtr-label>
+      <rtr-input inputId="email" placeholder="Email" type="email" />
     </div>
 
-    <app-tabs />
+    <rtr-tabs />
 
     <div class="flex flex-col items-center gap-4">
-      <app-card extraClass="w-3xl">
-        <app-card-header>
-          <app-card-title>My Title</app-card-title>
-          <app-card-description>Some description</app-card-description>
-          <app-card-action>
-            <app-button size="sm" variant="default">Action</app-button>
-            <app-sidebar-trigger />
-          </app-card-action>
-        </app-card-header>
+      <rtr-card extraClass="w-3xl">
+        <rtr-card-header>
+          <rtr-card-title>My Title</rtr-card-title>
+          <rtr-card-description>Some description</rtr-card-description>
+          <rtr-card-action>
+            <rtr-button size="sm" variant="default">Action</rtr-button>
+            <rtr-sidebar-trigger />
+          </rtr-card-action>
+        </rtr-card-header>
 
-        <app-card-content>
+        <rtr-card-content>
           <p>Main content here.</p>
-        </app-card-content>
+        </rtr-card-content>
 
-        <app-card-footer>
+        <rtr-card-footer>
           <p>Footer content</p>
-        </app-card-footer>
-      </app-card>
+        </rtr-card-footer>
+      </rtr-card>
 
-      <app-card extraClass="w-3xl">
-        <app-card-header>
-          <app-card-title>My Title</app-card-title>
-          <app-card-description>Some description</app-card-description>
-        </app-card-header>
+      <rtr-card extraClass="w-3xl">
+        <rtr-card-header>
+          <rtr-card-title>My Title</rtr-card-title>
+          <rtr-card-description>Some description</rtr-card-description>
+        </rtr-card-header>
 
-        <app-card-content>
+        <rtr-card-content>
           <p>Main content here.</p>
-        </app-card-content>
+        </rtr-card-content>
 
-        <app-card-footer>
+        <rtr-card-footer>
           <p>Footer content</p>
-        </app-card-footer>
-      </app-card>
+        </rtr-card-footer>
+      </rtr-card>
     </div>
-    <app-sheet />
+    <rtr-sheet />
 
     <router-outlet />
   </main>

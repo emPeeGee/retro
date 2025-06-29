@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { RdxLabelDirective } from '@radix-ng/primitives/label';
 
 @Component({
-  selector: 'app-label',
+  selector: 'rtr-label',
   imports: [RdxLabelDirective],
   templateUrl: './label.html',
 })

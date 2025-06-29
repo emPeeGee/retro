@@ -20,7 +20,7 @@ import {
 } from '@app/shared/components';
 
 @Component({
-  selector: 'app-root',
+  selector: 'rtr-root',
   imports: [
     RouterOutlet,
     Button,

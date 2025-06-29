@@ -4,7 +4,7 @@ import { Component, computed, input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-card',
+  selector: 'rtr-card',
   standalone: true,
   imports: [NgClass],
   template: `
@@ -23,7 +23,7 @@ export class Card {
 }
 
 @Component({
-  selector: 'app-card-header',
+  selector: 'rtr-card-header',
   standalone: true,
   imports: [NgClass],
   template: `
@@ -42,7 +42,7 @@ export class CardHeader {
 }
 
 @Component({
-  selector: 'app-card-title',
+  selector: 'rtr-card-title',
   standalone: true,
   imports: [NgClass],
   template: `
@@ -57,7 +57,7 @@ export class CardTitle {
 }
 
 @Component({
-  selector: 'app-card-description',
+  selector: 'rtr-card-description',
   standalone: true,
   imports: [NgClass],
   template: `
@@ -72,7 +72,7 @@ export class CardDescription {
 }
 
 @Component({
-  selector: 'app-card-action',
+  selector: 'rtr-card-action',
   standalone: true,
   imports: [NgClass],
   template: `
@@ -89,7 +89,7 @@ export class CardAction {
 }
 
 @Component({
-  selector: 'app-card-content',
+  selector: 'rtr-card-content',
   standalone: true,
   imports: [NgClass],
   template: `
@@ -104,7 +104,7 @@ export class CardContent {
 }
 
 @Component({
-  selector: 'app-card-footer',
+  selector: 'rtr-card-footer',
   standalone: true,
   imports: [NgClass],
   template: `

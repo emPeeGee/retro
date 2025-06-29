@@ -7,7 +7,7 @@ import {
   RdxTabsTriggerDirective,
 } from '@radix-ng/primitives/tabs';
 @Component({
-  selector: 'app-tabs',
+  selector: 'rtr-tabs',
   imports: [NgClass, RdxTabsRootDirective, RdxTabsListDirective, RdxTabsTriggerDirective, RdxTabsContentDirective],
   templateUrl: './tabs.html',
   styleUrl: './tabs.css',

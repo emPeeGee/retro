@@ -4,7 +4,7 @@ import { RdxLabelDirective } from '@radix-ng/primitives/label';
 import { RdxSwitchInputDirective, RdxSwitchRootDirective, RdxSwitchThumbDirective } from '@radix-ng/primitives/switch';
 
 @Component({
-  selector: 'app-switch',
+  selector: 'rtr-switch',
   templateUrl: './switch.html',
   imports: [RdxLabelDirective, RdxSwitchRootDirective, RdxSwitchInputDirective, RdxSwitchThumbDirective],
 })

@@ -5,7 +5,7 @@ import { SidebarService } from '../../../core/services/sidebar';
 import { Button } from '../button/button';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'rtr-sidebar',
   imports: [NgClass, CommonModule],
   template: `
     @if (collapsible() === 'none') {
@@ -90,7 +90,7 @@ export class SidebarComponent {
 }
 
 @Component({
-  selector: 'app-sidebar-rail',
+  selector: 'rtr-sidebar-rail',
   standalone: true,
   imports: [NgClass],
   template: `
@@ -128,20 +128,19 @@ export class SidebarRailComponent {
 }
 
 @Component({
-  selector: 'app-sidebar-trigger',
+  selector: 'rtr-sidebar-trigger',
   standalone: true,
   imports: [NgClass, Button],
   template: `
-    <app-button
+    <rtr-button
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
       [ngClass]="computedClass()"
       [size]="'icon'"
       [variant]="'noShadow'"
       (click)="handleClick($event)">
-      <!-- <app-panel-left-icon /> -->
       <span class="sr-only">Toggle Sidebar</span>
-    </app-button>
+    </rtr-button>
   `,
 })
 export class SidebarTriggerComponent {

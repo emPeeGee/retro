@@ -2,7 +2,7 @@ import { Component, contentChild, ElementRef, viewChild } from '@angular/core';
 import { provideRdxDialog, RdxDialogConfig, RdxDialogModule } from '@radix-ng/primitives/dialog';
 
 @Component({
-  selector: 'app-sheet',
+  selector: 'rtr-sheet',
   imports: [RdxDialogModule],
   templateUrl: './sheet.html',
   styleUrl: './sheet.css',
