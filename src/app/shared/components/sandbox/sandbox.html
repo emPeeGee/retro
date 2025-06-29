@@ -1,0 +1,55 @@
+<div class="flex gap-2">
+  <rtr-button variant="default">Do it!</rtr-button>
+  <rtr-button size="sm" variant="default">Do it!</rtr-button>
+  <rtr-button size="lg" variant="default">Do it!</rtr-button>
+  <rtr-button variant="neutral">Neutral</rtr-button>
+  <rtr-button variant="reverse">Neutral</rtr-button>
+  <rtr-button [disabled]="true">Disabled</rtr-button>
+  <rtr-button variant="noShadow">No shadow</rtr-button>
+</div>
+
+<rtr-switch />
+
+<div class="grid max-w-[200px] items-center gap-1.5">
+  <rtr-label htmlFor="email">Email</rtr-label>
+  <rtr-input inputId="email" placeholder="Email" type="email" />
+</div>
+
+<rtr-tabs />
+
+<div class="flex flex-col items-center gap-4">
+  <rtr-card extraClass="w-3xl">
+    <rtr-card-header>
+      <rtr-card-title>My Title</rtr-card-title>
+      <rtr-card-description>Some description</rtr-card-description>
+      <rtr-card-action>
+        <rtr-button size="sm" variant="default">Action</rtr-button>
+        <rtr-sidebar-trigger />
+      </rtr-card-action>
+    </rtr-card-header>
+
+    <rtr-card-content>
+      <p>Main content here.</p>
+    </rtr-card-content>
+
+    <rtr-card-footer>
+      <p>Footer content</p>
+    </rtr-card-footer>
+  </rtr-card>
+
+  <rtr-card extraClass="w-3xl">
+    <rtr-card-header>
+      <rtr-card-title>My Title</rtr-card-title>
+      <rtr-card-description>Some description</rtr-card-description>
+    </rtr-card-header>
+
+    <rtr-card-content>
+      <p>Main content here.</p>
+    </rtr-card-content>
+
+    <rtr-card-footer>
+      <p>Footer content</p>
+    </rtr-card-footer>
+  </rtr-card>
+</div>
+<rtr-sheet />
