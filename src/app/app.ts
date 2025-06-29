@@ -1,45 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {
-  Button,
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  InputComponent,
-  Label,
-  Sheet,
-  SidebarComponent,
-  SidebarRailComponent,
-  SidebarTriggerComponent,
-  Switch,
-  Tabs,
-} from '@app/shared/components';
+import { SidebarComponent, SidebarRailComponent } from '@app/shared/components';
+import { Link } from './shared/components/link/link';
 
 @Component({
   selector: 'rtr-root',
-  imports: [
-    RouterOutlet,
-    Button,
-    Switch,
-    InputComponent,
-    Label,
-    Sheet,
-    Tabs,
-    Card,
-    CardHeader,
-    CardTitle,
-    CardDescription,
-    CardAction,
-    CardContent,
-    CardFooter,
-    SidebarComponent,
-    SidebarTriggerComponent,
-    SidebarRailComponent,
-  ],
+  imports: [RouterOutlet, SidebarComponent, SidebarRailComponent, Link],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
