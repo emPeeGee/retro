@@ -21,19 +21,19 @@ module.exports = {
       'always',
       [
         '🎉 init',
-        '✨ feat', // Major feat
-        '🌱 feat', // Medium feat
-        '🧿 feat', // Minor feat
+        '🥞 feat', // Major feat
+        '🍳 feat', // Medium feat
+        '🥚 feat', // Minor feat
         '🚧 feat', // WIP feat
         '🐞 fix',
-        '📃 docs',
-        '🌈 style',
-        '🦄 refactor',
-        '🎈 perf',
+        '📜 docs',
+        '👞 style',
+        '🪐 refactor',
+        '🥕 perf',
         '🧪 test',
-        '🔧 build',
-        '🐎 ci',
-        '🐳 chore',
+        '🍴 build',
+        '🛞 ci',
+        '🌊 chore',
         '↪️ revert',
       ],
     ],
