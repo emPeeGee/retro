@@ -1,0 +1,9 @@
+<a
+  class="w-full hover:bg-accent block text-main-foreground select-none space-y-1 rounded-base border-2 border-transparent p-3 leading-none no-underline outline-hidden transition-color hover:border-border"
+  [routerLink]="to()">
+  <div class="text-base font-heading leading-none">{{title()}}</div>
+
+  @let subTitleVar = subTitle(); @if (subTitleVar) {
+  <p class="font-base line-clamp-2 text-sm leading-snug">{{subTitleVar}}</p>
+  }
+</a>
