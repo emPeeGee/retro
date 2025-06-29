@@ -59,7 +59,7 @@ export class SidebarComponent {
   sidebarWidthMobile = '18rem';
 
   readonly side = input<'left' | 'right'>('left');
-  readonly variant = input<'sidebar' | 'floating'>('floating');
+  readonly variant = input<'sidebar' | 'floating'>('sidebar');
   readonly collapsible = input<'offcanvas' | 'icon' | 'none'>('icon');
   readonly extraClass = input<string>('');
 
