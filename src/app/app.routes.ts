@@ -1,8 +1,11 @@
 import { Routes } from '@angular/router';
 import { NotFound } from './shared/components/not-found/not-found';
+// TODO: don'e import the SignIn component directly, use a feature module instead
+import { SignIn } from './features/auth/pages/sign-in/sign-in';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'chat', pathMatch: 'full' },
+  { path: 'sign-in', component: SignIn, pathMatch: 'full' },
   {
     path: 'chat',
     // do not use loadComponent here as you do not want to leak the internals of your feature into your app

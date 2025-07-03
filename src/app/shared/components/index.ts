@@ -6,6 +6,7 @@ import { Sheet } from './sheet/sheet';
 import { Switch } from './switch/switch';
 import { SidebarComponent, SidebarRailComponent, SidebarTriggerComponent } from './sidebar/sidebar';
 import { Tabs } from './tabs/tabs';
+import { Link } from './link/link';
 
 export {
   Tabs,
@@ -13,6 +14,7 @@ export {
   Switch,
   InputComponent,
   Label,
+  Link,
   Sheet,
   SidebarComponent,
   SidebarRailComponent,

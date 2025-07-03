@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SidebarComponent, SidebarRailComponent } from '@app/shared/components';
-import { Link } from './shared/components/link/link';
+import { Link, SidebarComponent, SidebarRailComponent } from '@app/shared/components';
 
 @Component({
   selector: 'rtr-root',
