@@ -12,6 +12,7 @@ export class Button {
   readonly size = input<ButtonSize>('md');
   readonly disabled = input<boolean>(false);
   readonly additionalClasses = input<string>('');
+  readonly type = input<'button' | 'submit' | 'reset'>('button');
 
   get buttonClasses(): string {
     const base = `inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm 
