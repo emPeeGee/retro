@@ -1,13 +1,12 @@
-import { inject } from '@angular/core';
-import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
+import { computed, inject } from '@angular/core';
+import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
 import { AuthService } from './auth.service';
-import { catchError, delay, map, Observable, tap, throwError } from 'rxjs';
+import { catchError, delay, map, Observable, tap } from 'rxjs';
 import { User } from '../../core/models';
 
 export type AuthState = {
   user: User | null;
   token: string | null;
-  isAuthenticated: boolean;
   isLoading: boolean;
   error: string | null;
 };
@@ -15,14 +14,14 @@ export type AuthState = {
 const initialState: AuthState = {
   user: null,
   token: null,
-  isAuthenticated: false,
   isLoading: false,
   error: null,
 };
-
 export const AuthStore = signalStore(
   withState(initialState),
-  // withComputed(),
+  withComputed(({ token }) => ({
+    isAuthenticated: computed(() => Boolean(token())),
+  })),
   withMethods(store => {
     const authService = inject(AuthService);
 
@@ -31,10 +30,9 @@ export const AuthStore = signalStore(
         patchState(store, state => ({ isLoading: true, error: null }));
 
         return authService.login(payload).pipe(
-          delay(1300),
+          delay(1000),
           tap(({ token }) => {
-            console.log('Login successful:', token);
-            // authService.saveToken(token);
+            authService.saveToken(token);
             patchState(store, { token, isLoading: false });
           }),
           map(({ token }) => token),

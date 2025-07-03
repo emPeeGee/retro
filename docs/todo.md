@@ -19,6 +19,9 @@
 
 ## Medium
 
+[ ] Don't store token in localstorage, cookie httponly??
+[ ] allow onlu absolute imports
+
 ## Minor
 
 [x] New emoji for commitlint

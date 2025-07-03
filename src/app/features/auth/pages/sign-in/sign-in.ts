@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { Button, Card, CardContent, CardFooter, CardHeader, InputComponent, Label, Link } from '@app/shared/components';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthStore } from '../../auth.store';
@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   imports: [InputComponent, ReactiveFormsModule, Button, Link, Card, CardHeader, Label, CardContent, CardFooter],
   templateUrl: './sign-in.html',
   styleUrl: './sign-in.css',
-  providers: [AuthStore],
 })
 export class SignIn {
   authStore = inject(AuthStore);
@@ -19,6 +18,15 @@ export class SignIn {
     email: new FormControl(''),
     password: new FormControl(''),
   });
+
+  constructor() {
+    effect(() => {
+      // Is the user authenticated? If so, redirect to the chat page.
+      if (this.authStore.isAuthenticated()) {
+        this.router.navigate(['/chat']);
+      }
+    });
+  }
 
   onSubmit(): void {
     console.debug('Form submitted:', this.signInForm.value);
