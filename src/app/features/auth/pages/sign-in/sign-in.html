@@ -1,0 +1,52 @@
+<section class="flex flex-col gap-4">
+  <rtr-card class="w-md">
+    <rtr-card-header>
+      <h2 class="text-2xl font-bold">Sign In</h2>
+      <p class="text-sm text-foreground/50">Please enter your credentials to sign in.</p>
+    </rtr-card-header>
+
+    <rtr-card-content>
+      <form class="flex gap-3 flex-col" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+        <div class="flex flex-col">
+          <rtr-label htmlFor="signin-email">Email</rtr-label>
+          <rtr-input
+            formControlName="email"
+            inputId="signin-email"
+            label="Email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            type="email" />
+        </div>
+
+        <div class="flex flex-col">
+          <rtr-label htmlFor="signin-password">Password</rtr-label>
+          <rtr-input
+            formControlName="password"
+            inputId="signin-password"
+            label="Password"
+            name="password"
+            placeholder="Enter your password"
+            required
+            type="password" />
+        </div>
+
+        <rtr-button type="submit" [disabled]="signInForm.invalid || authStore.isLoading()">
+          <span>Submit</span>
+          @if(authStore.isLoading()){
+          <!-- TODO: loader spinner -->
+          <span class="loader">Loading</span>
+          }
+        </rtr-button>
+        @if(authStore.error()) {
+        <p class="text-red-500">{{ authStore.error() }}</p>
+        }
+      </form>
+    </rtr-card-content>
+  </rtr-card>
+
+  <div class="flex items-center gap-2">
+    <p>Don't have an account?</p>
+    <rtr-link title="Sign Up" to="/sign-up" />
+  </div>
+</section>

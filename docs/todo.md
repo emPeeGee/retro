@@ -10,18 +10,21 @@
 
 [ ] Authentication
 [ ] Labels for messages ?
+[ ] dark/light theme
 
 ## High
 
-## Medium
+[ ] TanStack query
+[ ] Toast/Snack for visual feedback
 
-[ ] dark/light theme
+## Medium
 
 ## Minor
 
 [x] New emoji for commitlint
 [ ] 404 Design
 [ ] tw-animation library
+[ ] sign in validation error handling and display
 
 # BE
 
