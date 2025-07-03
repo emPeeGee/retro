@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
     "@internationalized/date": "^3.8.2",
+    "@ngrx/signals": "^19.2.1",
     "@radix-ng/primitives": "^0.39.5",
     "@tailwindcss/postcss": "^4.1.10",
     "postcss": "^8.5.6",
