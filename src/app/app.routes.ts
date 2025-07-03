@@ -5,10 +5,10 @@ export const routes: Routes = [
   { path: '', redirectTo: 'chat', pathMatch: 'full' },
   {
     path: 'chat',
-    loadComponent: () => import('./features/chat/components/chat/chat').then(m => m.Chat),
+    // do not use loadComponent here as you do not want to leak the internals of your feature into your app
+    loadChildren: () => import('./features/chat/chat.routes').then(m => m.chatRoutes),
     title: 'Retro - Chat',
   },
-
   // {
   //   path: 'saved/todo',
   //   loadComponent: () => import('./features/saved/components/saved/saved').then(m => m.Saved),

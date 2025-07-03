@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { ConversationsList } from '../conversations-list/conversations-list';
+import { RouterOutlet } from '@angular/router';
+import { ConversationsList } from '@app/features/chat/pages';
 
 @Component({
   selector: 'rtr-chat',
-  imports: [ConversationsList],
+  imports: [ConversationsList, RouterOutlet],
   templateUrl: './chat.html',
   styleUrl: './chat.css',
 })

@@ -8,6 +8,7 @@
 
 ## Feature
 
+[ ] Authentication
 [ ] Labels for messages ?
 
 ## High
@@ -21,3 +22,7 @@
 [x] New emoji for commitlint
 [ ] 404 Design
 [ ] tw-animation library
+
+# BE
+
+[ ] Refresh and access token

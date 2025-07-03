@@ -6,8 +6,7 @@ const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
 
 @Injectable({ providedIn: 'root' })
 export class SidebarService {
-  private readonly _open = signal<boolean>(false);
-  // private _open = signal<boolean>(this.getInitialSidebarState());
+  private readonly _open = signal<boolean>(this.getInitialSidebarState());
   private readonly _openMobile = signal<boolean>(false);
 
   readonly isMobile = signal<boolean>(false); // replace with matchMedia logic if needed
