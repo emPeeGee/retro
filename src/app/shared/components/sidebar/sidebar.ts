@@ -3,6 +3,7 @@ import { Component, computed, inject, input, output } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 import { SidebarService } from '../../../core/services/sidebar';
 import { Button } from '../button/button';
+import { AuthStore } from '@app/features/auth/auth.store';
 
 @Component({
   selector: 'rtr-sidebar',
@@ -47,6 +48,7 @@ import { Button } from '../button/button';
             data-sidebar="sidebar"
             data-slot="sidebar-inner">
             <h1>test</h1>
+            <h2>{{ authStore.isAuthenticated() }}</h2>
             <ng-content />
           </div>
         </div>
@@ -57,6 +59,8 @@ import { Button } from '../button/button';
 export class SidebarComponent {
   sidebar = inject(SidebarService);
   sidebarWidthMobile = '18rem';
+  // TODO: access a feature story, not a good practice
+  authStore = inject(AuthStore);
 
   readonly side = input<'left' | 'right'>('left');
   readonly variant = input<'sidebar' | 'floating'>('sidebar');

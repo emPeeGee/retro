@@ -9,6 +9,11 @@
 ## Feature
 
 [ ] Authentication
+
+1. [ ] Logout btn
+2. [ ] On API request fail
+3. [ ] See how to store user
+
 [ ] Labels for messages ?
 [ ] dark/light theme
 

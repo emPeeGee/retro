@@ -1,10 +1,11 @@
 import { computed, inject } from '@angular/core';
-import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { AuthService } from './auth.service';
 import { catchError, delay, map, Observable, tap } from 'rxjs';
 import { User } from '../../core/models';
 
 export type AuthState = {
+  // TODO: Not used yet
   user: User | null;
   token: string | null;
   isLoading: boolean;
@@ -45,5 +46,14 @@ export const AuthStore = signalStore(
         );
       },
     };
+  }),
+  withHooks({
+    onInit: store => {
+      const authService = inject(AuthService);
+      const token = authService.getToken();
+      if (token) {
+        patchState(store, { token });
+      }
+    },
   }),
 );
