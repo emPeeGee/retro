@@ -1,0 +1,18 @@
+<rtr-sidebar>
+  <header
+    class="w-xl flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"></header>
+
+  <h2>Authenticated: {{ authStore.isAuthenticated() }}</h2>
+
+  <div class="flex flex-col gap-2 p-2">
+    <rtr-link title="Chat" to="/chat" />
+    <rtr-link title="Sandbox" to="/sandbox" />
+    <rtr-link title="Profile" to="/profile" />
+    <rtr-link title="Settings" to="/settings" />
+    <rtr-link title="Sign in" to="/sign-in" />
+
+    <rtr-button class="w-full" variant="neutral">Sign out</rtr-button>
+  </div>
+
+  <rtr-sidebar-rail />
+</rtr-sidebar>

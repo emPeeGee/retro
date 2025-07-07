@@ -4,7 +4,7 @@
 [x] shorter import with index.ts
 [x] app prefix to ret or rtr
 [ ] better husky
-[ ] Madge
+[x] Madge
 
 ## Feature
 
@@ -34,6 +34,7 @@
 [ ] tw-animation library
 [ ] sign in validation error handling and display
 [ ] prefix all the component with 'Component' ex: SignInComponent
+[ ] SidebarRail -> Resize on drag
 
 # BE
 

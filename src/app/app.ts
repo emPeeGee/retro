@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Link, SidebarComponent, SidebarRailComponent } from '@app/shared/components';
+import { ShellSidebar } from '@app/shared/layout';
 
 @Component({
   selector: 'rtr-root',
-  imports: [RouterOutlet, SidebarComponent, SidebarRailComponent, Link],
+  imports: [RouterOutlet, ShellSidebar],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

@@ -2,8 +2,7 @@
 import { Component, computed, inject, input, output } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 import { SidebarService } from '@app/core/services/sidebar';
-import { Button } from '../button/button';
-import { AuthStore } from '@app/core/auth';
+import { Button } from '@app/shared/components';
 
 @Component({
   selector: 'rtr-sidebar',
@@ -47,8 +46,6 @@ import { AuthStore } from '@app/core/auth';
             group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
             data-sidebar="sidebar"
             data-slot="sidebar-inner">
-            <h1>test</h1>
-            <h2>{{ authStore.isAuthenticated() }}</h2>
             <ng-content />
           </div>
         </div>
@@ -59,7 +56,6 @@ import { AuthStore } from '@app/core/auth';
 export class SidebarComponent {
   sidebar = inject(SidebarService);
   sidebarWidthMobile = '18rem';
-  authStore = inject(AuthStore);
 
   readonly side = input<'left' | 'right'>('left');
   readonly variant = input<'sidebar' | 'floating'>('sidebar');
