@@ -7,6 +7,7 @@ import { Switch } from './switch/switch';
 import { SidebarComponent, SidebarRailComponent, SidebarTriggerComponent } from './sidebar/sidebar';
 import { Tabs } from './tabs/tabs';
 import { Link } from './link/link';
+import { NotFound } from './not-found/not-found';
 
 export {
   Tabs,
@@ -26,4 +27,5 @@ export {
   CardFooter,
   CardHeader,
   CardTitle,
+  NotFound,
 };

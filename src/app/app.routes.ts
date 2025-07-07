@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { NotFound } from '@app/shared/components/not-found/not-found';
-// TODO: don'e import the SignIn component directly, use a feature module instead
-import { SignIn } from './features/auth/pages/sign-in/sign-in';
+import { NotFound } from '@app/shared/components';
+import { SignIn } from '@app/features/auth';
 import { authGuard } from '@app/core/auth';
 
 export const routes: Routes = [
   // { path: '', redirectTo: 'chat', pathMatch: 'full' },
+  // TODO: use a route for whole authentication flow
   { path: 'sign-in', component: SignIn, pathMatch: 'full' },
   {
     path: 'chat',

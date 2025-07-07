@@ -33,6 +33,7 @@
 [ ] 404 Design
 [ ] tw-animation library
 [ ] sign in validation error handling and display
+[ ] prefix all the component with 'Component' ex: SignInComponent
 
 # BE
 
