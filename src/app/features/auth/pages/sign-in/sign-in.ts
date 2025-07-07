@@ -1,7 +1,7 @@
 import { Component, effect, inject } from '@angular/core';
 import { Button, Card, CardContent, CardFooter, CardHeader, InputComponent, Label, Link } from '@app/shared/components';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { AuthStore } from '../../auth.store';
+import { AuthStore } from '@app/core/auth';
 import { Router } from '@angular/router';
 
 @Component({

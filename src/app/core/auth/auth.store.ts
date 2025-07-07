@@ -2,7 +2,7 @@ import { computed, inject } from '@angular/core';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { AuthService } from './auth.service';
 import { catchError, delay, map, Observable, tap } from 'rxjs';
-import { User } from '../../core/models';
+import { User } from '../models';
 
 export type AuthState = {
   // TODO: Not used yet

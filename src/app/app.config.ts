@@ -5,8 +5,7 @@ import { routes } from './app.routes';
 import { provideRdxDialogConfig } from '@radix-ng/primitives/dialog';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { baseUrlInterceptor } from './core/interceptors/base-url-interceptor';
-// TODO: import from feature is not good
-import { AuthStore } from './features/auth/auth.store';
+import { AuthStore } from '@app/core/auth';
 
 export const appConfig: ApplicationConfig = {
   providers: [

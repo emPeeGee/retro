@@ -1,9 +1,9 @@
 /* eslint-disable max-classes-per-file */
 import { Component, computed, inject, input, output } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
-import { SidebarService } from '../../../core/services/sidebar';
+import { SidebarService } from '@app/core/services/sidebar';
 import { Button } from '../button/button';
-import { AuthStore } from '@app/features/auth/auth.store';
+import { AuthStore } from '@app/core/auth';
 
 @Component({
   selector: 'rtr-sidebar',
@@ -59,7 +59,6 @@ import { AuthStore } from '@app/features/auth/auth.store';
 export class SidebarComponent {
   sidebar = inject(SidebarService);
   sidebarWidthMobile = '18rem';
-  // TODO: access a feature story, not a good practice
   authStore = inject(AuthStore);
 
   readonly side = input<'left' | 'right'>('left');
