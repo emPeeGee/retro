@@ -10,9 +10,9 @@ export class AuthService {
     return this.http.post<{ token: string }>('api/Auth/login', payload);
   }
 
-  // logout(): void {
-  //   localStorage.removeItem('token');
-  // }
+  clearAuthStorage(): void {
+    localStorage.removeItem('token');
+  }
 
   saveToken(token: string): void {
     localStorage.setItem('token', token);

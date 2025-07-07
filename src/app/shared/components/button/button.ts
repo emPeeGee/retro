@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 type ButtonVariant = 'default' | 'noShadow' | 'neutral' | 'reverse';
 type ButtonSize = 'md' | 'sm' | 'lg' | 'icon';
@@ -11,8 +11,9 @@ export class Button {
   readonly variant = input<ButtonVariant>('default');
   readonly size = input<ButtonSize>('md');
   readonly disabled = input<boolean>(false);
-  readonly additionalClasses = input<string>('');
+  readonly extraClass = input<string>('');
   readonly type = input<'button' | 'submit' | 'reset'>('button');
+  readonly buttonClick = output<MouseEvent>();
 
   get buttonClasses(): string {
     const base = `inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm 
@@ -38,6 +39,12 @@ export class Button {
       icon: 'size-10',
     };
 
-    return [base, variants[this.variant()], sizes[this.size()], this.additionalClasses()].join(' ');
+    return [base, variants[this.variant()], sizes[this.size()], this.extraClass()].join(' ');
+  }
+
+  handleOnClick(event: MouseEvent): void {
+    if (!this.disabled()) {
+      this.buttonClick.emit(event);
+    }
   }
 }
