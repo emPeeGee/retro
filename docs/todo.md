@@ -42,3 +42,7 @@
 [ ] Refresh and access token
 
 [ ] do I write rxjs correctly?
+
+# Architecture
+
+[ ] document arhitecture and decisions
