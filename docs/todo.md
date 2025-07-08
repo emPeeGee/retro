@@ -11,10 +11,9 @@
 [ ] Authentication
 
 1. [x] Logout btn
-2. [ ] On API request fail
-3. [ ] See how to store user
-4. [ ] rename: login => signin and logout to sign out
-5. [ ] check if is authenticated based on BE response & sign out if necessary
+2. [ ] See how to store user
+3. [ ] rename: login => signin and logout to sign out
+4. [ ] On API request fail and logout. check if is authenticated based on BE response & sign out if necessary
 
 [ ] Labels for messages ?
 [ ] dark/light theme
