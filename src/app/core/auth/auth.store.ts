@@ -2,18 +2,14 @@ import { computed, inject } from '@angular/core';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { AuthService } from './auth.service';
 import { catchError, delay, map, Observable, of, tap } from 'rxjs';
-import { User } from '../models';
 
 export type AuthState = {
-  // TODO: Not used yet
-  user: User | null;
   token: string | null;
   isLoading: boolean;
   error: string | null;
 };
 
 const initialState: AuthState = {
-  user: null,
   token: null,
   isLoading: false,
   error: null,
@@ -48,7 +44,7 @@ export const AuthStore = signalStore(
 
       signOut(): Observable<boolean> {
         authService.clearAuthStorage();
-        patchState(store, () => ({ token: null, user: null }));
+        patchState(store, () => ({ token: null }));
         return of(true);
       },
     };
