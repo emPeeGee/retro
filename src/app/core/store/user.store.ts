@@ -1,6 +1,6 @@
-import { effect, inject } from '@angular/core';
-import { patchState, signalStore, withHooks, withMethods, withState } from '@ngrx/signals';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { inject } from '@angular/core';
+import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
+import { catchError, Observable, tap } from 'rxjs';
 import { User } from '../models';
 import { UserService } from '../services/user-service';
 
@@ -31,18 +31,10 @@ export const UserStore = signalStore(
           }),
           catchError(err => {
             patchState(store, { error: err?.error?.title ?? 'Unexpected error', isLoading: false });
-            return of(null);
+            throw err;
           }),
         );
       },
     };
-  }),
-  withHooks({
-    onInit: store => {
-      // TODO: not sure if this is the best place to call getUser
-      effect(() => {
-        store.getUser().subscribe();
-      });
-    },
   }),
 );
