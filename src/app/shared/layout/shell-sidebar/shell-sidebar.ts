@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthStore } from '@app/core/auth';
-import { UserStore } from '@app/core/store/user.store';
+import { UserStore } from '@app/core/store';
 import { Button, Link, SidebarComponent, SidebarRailComponent } from '@app/shared/components';
 
 @Component({
